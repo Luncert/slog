@@ -1,0 +1,5 @@
+level: INFO
+format: "[%T %L] %S %S %S"
+appender: UDP
+appenderConfig:
+  serverAddr: "localhost:2323"

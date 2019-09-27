@@ -1,0 +1,7 @@
+level: INFO
+format: "[%T %L] %S %S %S"
+appender: FILE
+appenderConfig:
+  logPath: "./test-output"
+  logFileNamePrefix: "test-log-"
+  maxSingleFileSize: "100B"
