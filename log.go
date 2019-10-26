@@ -61,6 +61,9 @@ func (l *logger) log(level logLevel, v ...interface{}) {
 		if err := l.appender.Write(l.formatter.format(level, v...)); err != nil {
 			errorF("Failed to write log: %v", err)
 		}
+		if level == logLevel.debugLevel {
+			os.Exit(1)
+		}
 	}
 }
 
