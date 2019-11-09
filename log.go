@@ -71,6 +71,16 @@ func whenNotInitialized(level logLevel, v ...interface{}) {
 var log *logger
 var logFunc = whenNotInitialized
 
+func init() {
+	log = &logger{
+		level: debugLevel,
+		appenderType: "STDOUT",
+		formatter: newLogFormatter("[%T %L] %S %S %S"),
+		appender: newStdoutAppender(),
+	}
+	logFunc = log.log
+}
+
 func InitLogger(configFile string) {
 	// read config
 	data, err := ioutil.ReadFile(configFile)
