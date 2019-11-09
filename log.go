@@ -77,7 +77,6 @@ var logFunc = whenNotInitialized
 func init() {
 	log = &logger{
 		level: debugLevel,
-		appenderType: "STDOUT",
 		formatter: newLogFormatter("[%T %L] %S %S %S"),
 		appender: newStdoutAppender(),
 	}
